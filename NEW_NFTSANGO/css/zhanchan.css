@@ -1,0 +1,347 @@
+.app1{
+  margin:0 auto;
+  width: 720px;
+  height:100%;
+  padding-bottom: 215px;
+  position: relative;
+  box-sizing: border-box;
+  background: #272c3a;
+  background-image: url(../image/zhanchan-background.png);
+  background-repeat: no-repeat;
+  /*background: url(../imgs/appBG.png) no-repeat;*/
+  background-position: bottom;
+  /*background:linear-gradient(#272c3a, #252a38, #202534,#1c222f)*/
+  /*overflow-y: scroll;*/
+}
+
+header{
+  width:100%;
+  height:63px;
+  /*padding-top: 65px;*/
+  margin-bottom: 10px;
+  background: url(../imgs/headerBG.jpg) no-repeat;
+  border-bottom: 2px solid #5d5243;
+  box-sizing: border-box;
+  position: relative;
+}
+.head-top{
+  height: 63px;
+  line-height: 63px;
+  font-size: 12px;
+  padding-top: 14px;
+  box-sizing: border-box;
+  color: #e9d9b2;
+  text-align: right;
+  background: url(../image/bottom.png) no-repeat;
+  background-color: #000;
+}
+.header-top-left{
+  width: 91px;
+  height: 91px;
+  background: url(../image/user.png) no-repeat;
+  position: absolute;
+  top: 0px;
+}
+.header-top-right{
+  float: left;
+  height: 31px;
+  line-height: 31px;  
+  margin-left: 114px;
+  position: relative;
+}
+.box1{
+  width:165px ;
+  float: left;
+}
+.box1-left{
+  float: left;
+}
+.box1-right{
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  font-size: 32px;
+}
+
+.box2{
+  float: left;
+  width:190px ;
+  margin-left:30px ;
+}
+.box2-left{
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 190px;
+  z-index: 15;
+}
+.box2-midd{
+  float: left;
+  position: absolute;
+  top: 3px;
+  left: 215px;
+  font-size: 20px;
+  color: #fff;
+  background: url(../image//put.png) no-repeat;
+  width: 110px;
+  padding-right: 5px;
+}
+.box2-right{
+  float: left;
+  position: absolute;
+  left: 330px;
+  top: 0%;
+}
+.box2-crcle{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.box3{
+  float: left;
+  width:184px ;
+  margin-left:20px;
+}
+.box3-left{
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 390px;
+  z-index: 15;
+}
+.box3-midd{
+  float: left;
+  position: absolute;
+  top: 3px;
+  left: 415px;
+  font-size: 20px;
+  color: #fff;
+  background: url(../image//put.png) no-repeat;
+  width: 110px;
+  padding-right: 5px;
+}
+.box3-right{
+  float: left;
+  position: absolute;
+  left: 530px;
+  top: 0%;
+}
+.box3-crcle{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.progress_bar{
+  height: 5px;
+  width: 100%;
+  background: url(../image//progress_bar.png) no-repeat;
+  position: absolute;
+  left: 91px;
+  top: 60px;
+}
+.main-box1{
+  width: 255px;
+  margin-top: 76px;
+  margin-left:133px;
+}
+
+.box1-p1{
+    font-size:24px ;
+    color:#ffcd28 ;
+    background: url(../image/zhanchan-box1-bottom1.png) no-repeat;
+    margin-left: 50px;
+    padding-left: 46px;
+}
+.box1-p2{
+  background: url(../image//zhanchan-box1-bottom2.png) no-repeat;
+  margin-left: 15px;
+  padding-left: 38px;
+  font-size: 24px;
+  color: #fff;
+  z-index: 99;
+  margin-top: -15px;
+}
+.box1-p2 span{
+  color:#ffcd28 ;
+}
+
+.box1-img{
+  width: 100%;
+  height: 224px;
+  margin-top: -45px;
+  background: url(../image/zhanchan-box1.png)
+}
+.main-box2{
+  width: 255px;
+  margin-top: -135px;
+  margin-left:445px;
+}
+
+.box2-p1{
+    font-size:24px ;
+    color:#ffcd28 ;
+    background: url(../image/zhanchan-box2-bottom1.png) no-repeat;
+    margin-left: 50px;
+    padding-left: 46px;
+}
+.box2-p2{
+  background: url(../image/zhanchan-box1-bottom2.png) no-repeat;
+  margin-left: 15px;
+  padding-left: 38px;
+  font-size: 24px;
+  color: #fff;
+  z-index: 99;
+  margin-top: -15px;
+}
+.box2-p2 span{
+  color:#ffcd28 ;
+}
+
+.box2-img{
+  width: 100%;
+  height: 224px;
+  margin-top: -45px;
+  background: url(../image/zhanchan-box2.png) no-repeat;
+}
+.main-box3{
+  width: 645px;
+  height: 344px;
+  margin-top: -135px;
+  background: url(../image/zhanchan-box3.png) no-repeat;
+  padding-top:110px;
+}
+.box3-p{
+  background: url(../image/zhanchan-box3-bottom.png) no-repeat;
+  font-size: 24px;
+  color:#ffcd28 ;
+  margin-left:255px ;
+  padding-left: 40px;
+}
+
+.main-box4{
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+
+}
+
+.main-box4-1{
+  width:262px;
+  margin-left: 100px;
+  float: left;
+}
+.box4-1-p1{
+  font-size: 24px;
+  color:#ffcd28 ;
+  margin-left: 55px;
+  padding-left: 45px;
+  background: url(../image/zhanchan-box4-1-bottom1.png) no-repeat;
+}
+.box4-1-p2{
+  margin-left: 107px;
+  margin-top: 5px;
+  padding-left: 45px;
+  font-size: 24px;
+  color: #fff;
+  /* background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat; */
+  position: relative;
+}
+.box4-1-p2 img{
+  position:  absolute;
+  left: -2px;
+  top:-2px;
+}
+.box4-1-p2 p{
+  width: 53px;
+  height: 23px;
+  line-height: 23px;
+  position: absolute;
+  top: -21px;
+  left: 27px;
+  padding-left: 18px;
+  background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat;
+}
+.box4-img-1{
+  width: 260px;
+  height: 136px;
+  margin-top: -16px;
+  /* margin-left: 100px; */
+  background: url(../image/zhanchan-box4-1.png) no-repeat;
+}
+.main-box4-2{
+  width:254px;
+  float: left;
+  margin-left: -30px;
+  margin-top: -2.5px;
+}
+.box4-2-p1{
+  font-size: 24px;
+  color:#ffffff ;
+  margin-left: 55px;
+  padding-left: 50px;
+  background: url(../image/zhanchan-box4-2-bottom1.png) no-repeat;
+}
+.box4-2-p2{
+  margin-left: 58px;
+  margin-top: 5px;
+  padding-left: 45px;
+  font-size: 24px;
+  color: #fff;
+  /* background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat; */
+  position: relative;
+}
+.box4-2-p2 img{
+  position:  absolute;
+  left: -2px;
+  top:-2px;
+}
+.box4-2-p2 p{
+  width: 53px;
+  height: 23px;
+  line-height: 23px;
+  position: absolute;
+  top: -21px;
+  left: 27px;
+  padding-left: 18px;
+  background: url(../image/zhanchan-box4-2-bottom2.png) no-repeat;
+}
+.box4-img-2{
+  width: 280px;
+  height: 170px;
+  margin-top: -16px;
+  /* margin-left: 100px; */
+  background: url(../image/zhanchan-box4-2.png) no-repeat;
+}
+
+.all-icon{
+  z-index: 999;
+  float: left;
+}
+.all-icon-left{
+  float: left;
+  position: absolute;
+  top: 116.5px;
+  left: 20px;
+}
+
+.all-icon-right-top{
+  position: absolute;
+  top: 105px;
+  right: 22px;
+}
+
+.all-icon-right-bottom{
+  position: absolute;
+  bottom: 127px;
+  right: 22px;
+}
+
+.all-icon-bottom{
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+}
+.all-icon-bottom li{
+  float: left;
+}
