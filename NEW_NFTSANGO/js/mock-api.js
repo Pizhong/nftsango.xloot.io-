@@ -19,7 +19,9 @@ $(document).ready(function(){
     data: JSON.stringify(selfData),
     success:function(data){
         console.log('mock模拟请求成功')
-        console.log(data,'mockData');      
+        console.log(data,'mockData');
+        storychape(data.rows)
     },
   })
 })
+

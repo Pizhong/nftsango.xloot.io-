@@ -18,15 +18,15 @@
     <header>
       <div class="head-top">
         <div class="header-top-left">
-            <img src="./image/jues.png" style="position: absolute;top: 5px;left: 5px;">
+            <img src="./image/jues.png" style="position: absolute;top: 5px;left: 5px;"  onclick="getMenuPanel()">
         </div>
         <div class="flex header-top-right">
-            <div class="box1">
+            <!-- <div class="box1">
               <div class="box1-left">
                 <img src="./image/head_icon1.png" alt="">
               </div>
               <div class="box1-right">208596</div>
-            </div>
+            </div> -->
             <div class="box2">
               <div class="box2-left">
                 <img src="./image/head_icon2.png" alt="">
@@ -57,13 +57,15 @@
       </div>
     </header>
     <div class="main flex">
-      <ul>
-        <li class="main-first">
+      <ul id="main-huihe">
+        <li class="main-first" id="main-content">
           <div class="huihe"><span>第13回 辕门射戟</span></div>
           <div class="country"><img src="./image//country-icon.png" alt=""></div>
           <div class="jianli">
             <img src="./image/eos.png" alt="" class="jianli-eos">
-            <img src="./image//time.png" alt="" class="jianli-time">
+            <span class="eos-text">>9999EOS</span>
+            <img src="./image/time.png" alt="" class="jianli-time">
+            <span class="time-text">>9999TIME</span>
           </div>
           <div class="status">
             <img src="./image/end.png" alt="">
@@ -77,13 +79,20 @@
           <div class="country"><img src="./image//country-icon.png" alt=""></div>
           <div class="jianli">
             <img src="./image/eos.png" alt="" class="jianli-eos">
+            <span class="eos-text">>9999EOS</span>
+
             <img src="./image//time.png" alt="" class="jianli-time">
+            <span class="time-text">>9999TIME</span>
+
           </div>
           <div class="status" style="top: 180px;font-size: 24px;color:#307a42 ;">
             <!-- <img src="./image/keep.png" alt=""> -->
             <p>进行中...</p>
           </div>
-          <div class="guaji">
+          <div class="time">
+            <p>开始时间：&nbsp;2020-12-01 20:00:00 - 2020-12-08 20:00:00 </p>
+          </div>
+          <!-- <div class="guaji">
             <span class="shouyi">挂机收益:</span>
             <ul>
               <li><img src="./image//guaji-icon1.png" alt=""><span>410/m</span></li>
@@ -91,20 +100,27 @@
               <li><img src="./image/guaji-icon3.png" alt=""><span>600/m</span></li>
               <li><img src="./image/guaji-icon4.png" alt=""><span>11/m</span></li>
             </ul>
-          </div>
+          </div> -->
         </li>
         <li class="main-third">
           <div class="huihe"><span>第15回 袁术称帝</span></div>
-          <div class="country"><img src="./image//country-icon.png" alt=""></div>
+          <div class="country"><img src="./image/country-icon.png" alt=""></div>
           <div class="jianli">
             <img src="./image/eos.png" alt="" class="jianli-eos">
+            <span class="eos-text">>9999EOS</span>
+
             <img src="./image//time.png" alt="" class="jianli-time">
+            <span class="time-text">>9999TIME</span>
+
           </div>
           <div class="status" style="top: 180px;font-size: 24px;color:#307a42 ;">
             <p>挂机中...（4/10）</p>
             <!-- <p>进行中</p> -->
           </div>
-          <div class="guaji">
+          <div class="time">
+            <p>开始时间：&nbsp;2020-12-01 20:00:00 - 2020-12-08 20:00:00 </p>
+          </div>
+          <!-- <div class="guaji">
             <span class="shouyi">挂机收益:</span>
             <ul>
               <li><img src="./image//guaji-icon1.png" alt=""><span>410/m</span></li>
@@ -112,7 +128,7 @@
               <li><img src="./image/guaji-icon3.png" alt=""><span>600/m</span></li>
               <li><img src="./image/guaji-icon4.png" alt=""><span>11/m</span></li>
             </ul>
-          </div>
+          </div> -->
         </li>
       </ul>
     </div>
@@ -140,4 +156,5 @@
 <script type="text/javascript" src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>
 <script type="text/javascript" src="./mock/index.js"></script>
 <script type="text/javascript" src="./js/mock-api.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
 </html>
