@@ -5,6 +5,7 @@ Mock.mock('/get_row','post',{
       {
         eosass: "0.0000 EOS",
         id: 13,
+        kingdomid: 1,
         name: "辕门射戟",
         period: 604800,
         start: "2020-12-15T11:00:00",
@@ -14,6 +15,7 @@ Mock.mock('/get_row','post',{
       {
         eosass: "0.0000 EOS",
         id: 14,
+        kingdomid: 2,
         name: "宛城之变",
         period: 604800,
         start: "2020-12-15T11:00:00",
@@ -23,6 +25,7 @@ Mock.mock('/get_row','post',{
       {
         eosass: "0.0000 EOS",
         id: 15,
+        kingdomid: 3,
         name: "袁术称帝",
         period: 604800,
         start: "2020-12-16T11:00:00",

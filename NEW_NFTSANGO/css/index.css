@@ -155,10 +155,10 @@ header{
 .top-bar span{
   color: #4ff2c5;
 }
-.top-bar-close{
+.top-bar-edit{
   position: absolute;
   top: 40px;
-  left:600px;
+  left:610px;
   cursor: pointer;
 }
 

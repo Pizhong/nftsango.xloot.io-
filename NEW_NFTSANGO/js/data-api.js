@@ -1,6 +1,6 @@
 
 
-function getStorychapeList(fun){
+(function getStorychapeList(fun){
 	var api = get_random_api();
 	var selfData = {
 	    json: true, // Get the response as json
@@ -16,12 +16,12 @@ function getStorychapeList(fun){
    $.post(api + "/v1/chain/get_table_rows", JSON.stringify(selfData),
     function(data, status) {
 
-      console.log(data);
+      console.log(data,'da');
+      storychape(data.rows);
+      // fun(data);
       
-      fun(data);
-
       // for (x in data["rows"]) {
       //   console.log("返回的数据块:", data["rows"][x]);
       // }
     }, "json"); 	
-}
+})()

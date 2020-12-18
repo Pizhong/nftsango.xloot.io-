@@ -886,4 +886,33 @@ function getLinkData(api,selfData,fun){
   );
 
 }
+//昭告弹窗
+function getShowPublicly(){
+  if ($('#publiclyBox').length == 0) {
+    
+    var html = '';
+   
+    html += '<div class="alert-publicly" id="publiclyBox" style="display: none;">';
+    html += '<div class="alert-box">';
+    html +=  '<div class="content">';
+    html +=  '<p>群豪<span>sango555</span>,您要昭告天下吗？（每次1EOS）</p>'
+    html +=  '<form>'
+    html +=  '<input type="text" placeholder="输入昭告内容，限制128字" maxlength="128"></input>'
+    html +=  '</form>'
+    html +=  '<div class="alert-box-button">'
+    html +=  '<img src="./image/button-sure.png">'
+    html +=  '<img src="./image/button-cancle.png" onclick="$(\'#publiclyBox\').hide()">'
+    html +=  '</div>'
+    html +=  '</div>';
+    html += '</div>';
+    html += '</div>';
+    
 
+    $('body').append(html);
+  }else{
+
+  }
+  $("#publiclyBox").show();
+
+
+}
