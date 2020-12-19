@@ -344,7 +344,7 @@ header{
 }
 .jianli-che{
   float: left;
-  
+  cursor: pointer;
 }
 .jianli-che img{
   margin-top: -15px;
