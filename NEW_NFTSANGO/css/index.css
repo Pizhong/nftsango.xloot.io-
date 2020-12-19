@@ -41,6 +41,7 @@ header{
   position: absolute;
   top: 0px;
   cursor: pointer;
+  z-index: 999;
 }
 .header-top-right{
   float: left;
@@ -150,7 +151,7 @@ header{
   position: relative;
   margin-left: 20px;
   margin-top: -18px;
-  z-index: 66;
+  /* z-index: 66; */
 }
 .top-bar span{
   color: #4ff2c5;
@@ -161,13 +162,16 @@ header{
   left:610px;
   cursor: pointer;
 }
-
+.main{
+  margin-top:29px;
+}
 .main-first{
   width: 680px;
   height: 300px;
   background: url(../image/label1.png) no-repeat;
   position: relative;
   margin-bottom: 15px;
+  padding-top: 15px;
 }
 .huihe{
   width:320px ;
@@ -204,7 +208,7 @@ header{
 .eos-text{
   position: absolute;
   top: 55px;
-  left: 10px;
+  left: 15px;
   font-size: 11px;
   color: red;
 }

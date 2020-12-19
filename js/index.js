@@ -1,3 +1,4 @@
+
 var selectNum = 1;
 var kingContractName = "xkingbattle1";
 var kingMsg = [];

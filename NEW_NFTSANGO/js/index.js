@@ -63,6 +63,18 @@ function storychape(data){
       var endTime=data[i]["period"]+(new Date(data[i]["start"]).getTime())
       endTime = formatTime(endTime)
       console.log(endTime,'endTime');
+      if(parseInt((data[i]["eosass"]))<1.0){
+        data[i]["eosass"]="<1.0EOS"
+      }
+      else {
+        data[i]["eosass"]=parseInt((data[i]["eosass"]))
+      }
+      if(parseInt((data[i]["timeass"]))<1.0){
+        data[i]["timeass"]="<1.0TIME"
+      }
+      else {
+        data[i]["timeass"]=parseInt((data[i]["timeass"]))
+      }
       html2 += '<li class="main-first" id="id-main" style="background-image:url(' + backgroundMap[data[i]["id"]] + ')">';
       html2 +=    '<div class="huihe">'
       html2 +=    '<span>第'+data[i]["id"]+'回 '+ data[i]["name"]+'</span>'
@@ -70,9 +82,9 @@ function storychape(data){
       html2 +=    '<div class="country"><img src="'+countryIconMap[data[i]["kingdomid"]] +'" alt=""></div>'
       html2 +=    '<div class="jianli">'
       html2 +=    '<img src="./image/eos.png" alt="" class="jianli-eos">'
-      html2 +=    '<span class="eos-text">>'+data[i]["eosass"]+'</span>'
+      html2 +=    '<span class="eos-text">'+data[i]["eosass"]+'</span>'
       html2 +=    '<img src="./image/time.png" alt="" class="jianli-eos">'
-      html2 +=    '<span class="time-text">>'+data[i]["timeass"]+'</span>'
+      html2 +=    '<span class="time-text">'+data[i]["timeass"]+'</span>'
       html2 +=     '</div>'
       html2 +=     '<div class="status">'
       html2 +=     '<img src="./image/end.png" alt="">'

@@ -374,3 +374,179 @@ span{
 .alert-publicly .alert-box .alert-box-button img{
   cursor: pointer;
 }
+
+.alert-publicly .alert-box .action-content{
+  position: absolute;
+  top: 90px;
+  left: 15px;
+  width: 100%;
+  height: 125px;
+  text-align: center;
+  background: url(../image/action-point--bottom.png) no-repeat;
+}
+.alert-publicly .alert-box .action-content p{
+  font-size: 24px;
+  color: #663300;
+  margin-right: 10px;
+  margin-left: -50px;
+}
+.alert-publicly .alert-box .action-content span{
+  color: #a73a37;
+}
+.alert-publicly .alert-box .action-content .close{
+  position: absolute;
+  top: 25px;
+  right: 70px;
+  cursor: pointer;
+}
+
+.alert-publicly .alert-box .war-report-content{
+  position: absolute;
+  top: 55px;
+  left: 15px;
+  width: 100%;
+  text-align: center;
+  background: url(../image/war-report-bottom.png) no-repeat;
+}
+
+.alert-publicly .alert-box .war-report-content .close{
+  position: absolute;
+  top: 32px;
+  right: 60px;
+  cursor: pointer;
+}
+.alert-publicly .alert-box .war-report-content .top{
+  width: 600px;
+  height: 133px;
+
+  background: url(../image/war-report-gonggao-bottom.png) no-repeat;
+  text-align: left;
+  overflow: hidden;
+  font-size: 24px;
+  color: #663300;
+  font-family: "微软雅黑";
+  margin-top: 91px;
+  margin-left: 35px;
+  line-height: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.alert-publicly .alert-box .war-report-content .top p{
+  margin: 0;
+  margin-right: 40px;
+
+}
+.alert-publicly .alert-box .war-report-content .middle{
+  width: 600px;
+  height: 552px;
+  background: url(../image/war-report-liebiao-bottom.png) no-repeat;
+  padding-left: 20px;
+  text-align: left;
+  overflow: hidden;
+  margin-top: 33px;
+  margin-left: 35px;
+
+}
+.alert-publicly .alert-box .war-report-content .middle li{
+  font-size: 24px;
+  color: #805b39;
+  font-family: "微软雅黑";
+  margin-top: 20px;
+  margin-right: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #523929;
+}
+.alert-publicly .alert-box .war-report-content .middle li:last-of-type{
+  border-bottom: none;
+}
+.alert-publicly .alert-box .war-report-content .middle li span{
+  font-size: 24px;
+  color: #993333;
+  font-family:"Helvetica";
+}
+.alert-publicly .alert-box .war-report-content .btn-group{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+}
+.alert-publicly .alert-box .war-report-content .btn-group img:first-of-type{
+  margin-right: 40px;
+}
+
+.alert-publicly .alert-box .action-message-content{
+  position: absolute;
+  top: 175px;
+  left: 15px;
+  width: 100%;
+
+  text-align: center;
+  background: url(../image/action-message-bottom.png) no-repeat;
+}
+.action-message-box1{
+  width: 615px;
+  text-align: left;
+  margin-left: 33px;
+  margin-top: 66px;
+}
+.action-message-box1 p{
+  font-size: 28px;
+  color: #602d10;
+  margin: 0;
+}
+
+.action-message-icon-box{
+  height: 100%;
+  margin-top: 5px;
+  background: url(../image/action-message-icon-box-bottom.png) no-repeat;
+  padding: 20px;
+}
+.action-message-icon-box img{
+  margin-right: 25px;
+}
+.action-message-box2{
+  width: 615px;
+  text-align: left;
+  margin-left: 33px;
+  margin-top: 15px;
+}
+.action-message-box2 p{
+  font-size: 28px;
+  color: #602d10;
+  margin: 0;
+}
+.action-message-box3{
+  text-align: left;
+  margin-left: 33px;
+  margin-top: 15px;
+}
+.action-message-box3 p{
+  font-size: 22px;
+  color: #602d10;
+  margin: 0;
+}
+.action-message-box3 input {
+  width: 600px;
+  height: 45px;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px #666 inset;
+  outline: none;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 24px;
+  background-color: #e9e2d7;
+  margin: 15px 0;
+}
+.action-message-box3 span{
+  color: #993333;
+}
+.sure-btn{
+  margin: 40px 0;
+}
+.action-message-content .close{
+  position: absolute;
+  top: 32px;
+  right: 60px;
+  cursor: pointer;
+}

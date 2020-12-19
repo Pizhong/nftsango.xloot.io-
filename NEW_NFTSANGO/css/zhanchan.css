@@ -140,16 +140,20 @@ header{
   left: 91px;
   top: 60px;
 }
+.main{
+  position: relative;
+}
 .main-box1{
   width: 255px;
-  margin-top: 76px;
-  margin-left:133px;
+  margin-top: 65px;
+  margin-left:95px;
+  cursor: pointer;
 }
 
 .box1-p1{
     font-size:24px ;
     color:#ffcd28 ;
-    background: url(../image/zhanchan-box1-bottom1.png) no-repeat;
+    background: url(../image/zhanchan-box1-bottom.png) no-repeat;
     margin-left: 50px;
     padding-left: 46px;
 }
@@ -169,12 +173,12 @@ header{
 .box1-img{
   width: 100%;
   height: 224px;
-  margin-top: -45px;
-  background: url(../image/zhanchan-box1.png)
+  margin-top: -25px;
+  background: url(../image/zhanchan-box1.png) no-repeat;
 }
 .main-box2{
   width: 255px;
-  margin-top: -135px;
+  margin-top: -137px;
   margin-left:445px;
 }
 
@@ -201,7 +205,7 @@ header{
 .box2-img{
   width: 100%;
   height: 224px;
-  margin-top: -45px;
+  margin-top: -20px;
   background: url(../image/zhanchan-box2.png) no-repeat;
 }
 .main-box3{
@@ -314,9 +318,53 @@ header{
   background: url(../image/zhanchan-box4-2.png) no-repeat;
 }
 
+.blod-box{
+  position: absolute;
+  top: 0;
+  left: 360px;
+}
+.blod-box p{
+  font-size: 16px;
+  color: #ffcc66;
+  margin: 0;
+}
+
+
+
+
+.jianli{
+  position: absolute;
+  top: 200px;
+  left: 280px;
+  
+}
+.jianli-baoxiang{
+  margin-right: 20px;
+  float: left;
+}
+.jianli-che{
+  float: left;
+  
+}
+.jianli-che img{
+  margin-top: -15px;
+}
+.jianli-che p{
+  width: 100px;
+  height: 34px;
+  line-height: 34px;
+  background: url(../image/che-bottom.png) no-repeat;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+}
 .all-icon{
   z-index: 999;
   float: left;
+}
+.all-icon li{
+ cursor: pointer;
 }
 .all-icon-left{
   float: left;
@@ -324,6 +372,7 @@ header{
   top: 116.5px;
   left: 20px;
 }
+
 
 .all-icon-right-top{
   position: absolute;

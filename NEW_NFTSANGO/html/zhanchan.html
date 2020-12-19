@@ -52,7 +52,7 @@
       </div>
     </header>
     <div class="main">
-      <div class="main-box1">
+      <div class="main-box1" onclick="getActionPotint()">
         <p class="box1-p1">魏国驻军</p>
         <p class="box1-p2"><span>准备期&nbsp;</span>00:25:25</p>
         <!-- <img class="box1-img1" src="../image/zhanchan-box1.png" alt=""> -->
@@ -85,42 +85,68 @@
           <div class="box4-img-2"></div>
         </div>
       </div>
+      <div class="blod-box">
+        <p>血量：1.1亿</p>
+        <img src="../image/blod.png" alt="">
+        <p>防御：1.1亿</p>
+        <img src="../image/bule .png" alt="">
+        <p style="margin-top: 8px;">行动力 : 33456 / 67899445</p>
+      </div>
+      <div class="jianli">
+        <img src="../image/baoxiang.png" alt="" class="jianli-baoxiang">
+        <div class="jianli-che">
+          <img src="../image/che.png" alt="">
+          <p>99999.9999</p>
+        </div>
+       
+      </div>
+
     </div>
     <div class="all-icon">
       <div class="all-icon-left">
         <ul>
-          <li><img src="../image/left-icon-1.png" alt=""></li>
-          <li><img src="../image//left-icon-2.png" alt=""></li>
-          <li><img src="../image//left-icon-3.png" alt=""></li>
-          <li><img src="../image//left-icon-4.png" alt=""></li>
-          <li><img src="../image/left-icon-5.png" alt=""></li>
-          <li><img src="../image/left-icon-6.png" alt=""></li>
-          <li><img src="../image/left-icon-7.png" alt=""></li>
+          <li><img src="../image/left-icon-1.png" alt=""></li> <!--政治任务-->
+          <li><img src="../image//left-icon-3.png" alt=""></li><!--武将目标-->
+          <li><img src="../image//left-icon-4.png" alt=""></li><!--日常-->
+          <li><img src="../image/left-icon-5.png" alt=""></li><!--我要变强-->
+          <li><img src="../image/left-icon-6.png" alt=""></li><!--奖励-->
+          <li><img src="../image/left-icon-7.png" alt=""></li><!--签到-->
         </ul>
       </div>
       <div class="all-icon-right-top">
         <ul>
-          <li><img src="../image/right-top-icon-1.png" alt=""></li>
-          <li><img src="../image/right-top-icon-2.png" alt=""></li>
+          <li><img src="../image/right-top-icon-1.png" alt="" onclick="showWarReport()"></li><!--战报-->
+          <li><img src="../image/right-top-icon-2.png" alt=""></li><!--任务-->
+          <li><img src="../image//left-icon-2.png" alt="" onclick="showActionMessage()"></li><!--战斗目标-->
         </ul>
       </div>
       <div class="all-icon-right-bottom">
         <ul>
-          <li><img src="../image/right-bottom-icon-1.png" alt=""></li>
-          <li><img src="../image/right-bottom-icon-2.png" alt=""></li>
+          <li><img src="../image/right-bottom-icon-1.png" alt=""></li><!--战役-->
+          <li><img src="../image/right-bottom-icon-2.png" alt=""></li><!--主城-->
         </ul>
       </div>
       <div class="all-icon-bottom">
           <ul>
-            <li><img src="../image/bottom-icon-1.png" alt=""></li>
-            <li><img src="../image/bottom-icon-2.png" alt=""></li>
-            <li><img src="../image/bottom-icon-3.png" alt=""></li>
-            <li><img src="../image/bottom-icon-4.png" alt=""></li>
-            <li><img src="../image/bottom-icon-5.png" alt=""></li>
-            <li><img src="../image/bottom-icon-6.png" alt=""></li>
+            <li><img src="../image/bottom-icon-1.png" alt=""></li><!--道具-->
+            <li><img src="../image/bottom-icon-2.png" alt=""></li><!--武将-->
+            <li><img src="../image/bottom-icon-3.png" alt=""></li><!--事件-->
+            <li><img src="../image/bottom-icon-4.png" alt=""></li><!--内政-->
+            <li><img src="../image/bottom-icon-5.png" alt=""></li><!--商城-->
+            <li><img src="../image/bottom-icon-6.png" alt=""></li><!--更多  -->
           </ul>
       </div>
     </div>
   </div>
 </body>
+<script type="text/javascript" src="../js/zhanchan.js?v=20201219"></script>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/countUp.js"></script>
+<script type="text/javascript" src="../js/eos16.0.0.min.js"></script>
+<script type="text/javascript" src="../js/scatterjs-core.min.js"></script>
+<script type="text/javascript" src="../js/scatterjs-plugin-eosjs.min.js"></script>
+<script type="text/javascript" src="../js/common.js?v=2020120117"></script>
+<script type="text/javascript" src="../js/eos-base.js?v=2020120117"></script>
+<script type="text/javascript" src="../js/data-api.js?v=2020120117"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </html>
