@@ -1163,6 +1163,5 @@ function uploadPubliclyContent(){
   var publiclyContent= $("#publicly-content").val()
   console.log(publiclyContent);
   transferAccounts(publiclyContent)
-  
 }
 
