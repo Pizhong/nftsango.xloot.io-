@@ -7,13 +7,130 @@ var myMoneyLockWeekTimer = '';
 // looreception 前置接收合约
 // xlootnftdex1 NFTDEX合约
 
+ScatterJS.plugins(new ScatterEOS());
+
+var chainId , network ;
+var nftContractName, dexContractName, saleContractName , blindBoxContractName;
+const API_ENDPOINTS2 = [
+  'eospush.tokenpocket.pro',
+  'eos.blockeden.cn',
+  'eos.greymass.com',
+  'nodes.get-scatter.com',
+  // 'mainnet.meet.one',
+  'api.eossweden.se',
+  // 'api.eoslaomao.com',
+
+  // 'api-kylin.eosasia.one',
+];
+
+function get_random_api2() {
+  // const index = Math.floor(Math.random() * API_ENDPOINTS2.length);
+
+  var index = getCookie("nodeIndex") || nodeIndex;
+  // var node = 'https://'+API_ENDPOINTS2[index];
+  var node = API_ENDPOINTS2[index];
+
+  // var node = 'https://api-kylin.eosasia.one';
+  // console.log(index,node);
+  return node;
+}
+
+const API_ENDPOINTS = [
+  'https://eospush.tokenpocket.pro',
+  'https://eos.blockeden.cn',
+  'https://eos.greymass.com',
+  // 'https://mainnet.meet.one',
+  'https://api.eossweden.se',
+  // 'https://api.eoslaomao.com'
+  // 'https://api-kylin.eosasia.one'
+];
+  
+function get_random_api() {
+  const index = Math.floor(Math.random() * API_ENDPOINTS.length);
+  return API_ENDPOINTS[index];
+
+}
+
+// chainId = '5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191';
+// nftContractName = 'xlootshovel1';//nft
+// saleContractName = 'looreception';//前置
+// dexContractName = 'xlootnftdex1';//dex
+// blindBoxContractName = 'xpetshovelco';
+
+
+
+// network = ScatterJS.Network.fromJson({
+//   blockchain: 'eos',
+//   host: 'api-kylin.eosasia.one',
+//   protocol: 'https',
+//   port: 443,
+//   chainId: chainId
+// })
+
+chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
+// nftContractName = 'xlootshovel1';
+nftContractName = 'xlootshovel1';
+saleContractName = 'looreception';
+dexContractName = 'xlootnftdex1';
+blindBoxContractName = 'xpetshovelco';
+network = ScatterJS.Network.fromJson({
+  blockchain: 'eos',
+  host: get_random_api2(),
+  protocol: 'https',
+  port: 443,
+  chainId: chainId
+})
+
+var isDev = true;
+const EOS_CONFIG = {
+  chainId: chainId, // 32 byte (64 char) hex string
+  keyProvider: '', // WIF string or array of keys..
+  httpEndpoint: 'https://' + get_random_api2(),
+  mockTransactions: () => null, // or 'fail'
+  expireInSeconds: 3600,
+  broadcast: true,
+  verbose: isDev,
+  debug: isDev, // API and transactions
+  sign: true
+}
 
 $(function() {
+  // getNavPanel();
+  connectEOS();
   if(getCookie("account")){
 
     $(".myName").html(getCookie("account"));
   }
+  // eosLogin();
 })
+
+function connectEOS() {
+  if (window.ScatterJS) {
+    ScatterJS.connect(dexContractName, {
+      network
+    }).then(connected => {
+      console.log("connected", connected)
+      if (!connected) return false;
+      // ScatterJS.someMethod();
+    });
+    loot.scatter = window.ScatterJS.scatter;
+    window.ScatterJS = null;
+    setTimeout(function(){
+      eosLogin();
+    },1000)
+    
+  }
+
+}
+
+
+
+function getDateRandom() {
+  var n = 10000,
+    m = 99999
+  return Date.now() + parseInt(Math.random() * (n - m + 1) + m);
+}
+
 
 
 
@@ -24,8 +141,97 @@ function selectionNode(num){
 }
 function setNode(){
   setCookie('nodeIndex',nodeIndex);
+  // network = ScatterJS.Network.fromJson({
+  //   blockchain: 'eos',
+  //   host: get_random_api2(),
+  //   // host: 'nodes.eos42.io',https://mainnet.eoscannon.io
+  //   protocol: 'https',
+  //   port: 443,
+  //   chainId: chainId
+  // })
   $('.nodeDialog').hide();
   window.location.reload();
+}
+
+
+function eosLogin() {
+  checkScatter(function(user) {
+    pubKeySign(user.name);
+    currencyBalance(user.name)
+  })
+}
+function currencyBalance(eosName){
+  console.log(eosName,'eosName');
+  const eos = loot.scatter.eos(network, Eos);
+  eos.getCurrencyBalance({
+    account: eosName,
+    code: 'eosio.token',
+    symbol: 'EOS'
+  })
+    .then(result => {
+      console.log(result)
+      getBalance(result)
+    })
+    .catch(error => console.error(error));
+}
+
+
+
+
+
+
+function getScatter() {
+  if (window.scatter) {
+    loot.scatter = window.scatter;
+  }
+  return loot.scatter;
+}
+
+function checkScatter(fun) {
+  var scatter = getScatter();
+  if (scatter) {
+    if (scatter.identity) {
+      // console.log(scatter.identity);
+      const user = loot.scatter.identity.accounts.find(account => account.blockchain === 'eos');
+      if (user.publicKey) {
+        loot.publicKey = user.publicKey
+      }
+      loot.bomber = user.name;
+      // fun(user.name);
+      fun(user);
+      // console.log("userMsg:",user);
+    } else {
+      const requiredFields = {
+        accounts: [network]
+      };
+      if (scatter.getIdentity) {
+        scatter.getIdentity(requiredFields).then(identity => {
+          var user = '';
+          if (getCookie("customerType") == 'BOS' || getCookie("blockchain") == 'BOS') {
+            user = identity.accounts.find(account => account.blockchain === 'bos');
+          } else {
+            user = identity.accounts.find(account => account.blockchain === 'eos');
+          }
+          if (user.publicKey) {
+            loot.publicKey = user.publicKey
+          }
+          if (isMYKEY()) {
+            loot.publicKey = identity.publicKey;
+          }
+          loot.bomber = user.name;
+          // fun(user.name);
+          fun(user);
+          // console.log("userMsg2:",user);
+        }).catch(error => {
+          eosErrorShow(error);
+        });
+      } else {
+        showMsg("请打开钱包");
+      }
+    }
+  } else {
+    noScatterShow();
+  }
 }
 
 
@@ -37,7 +243,20 @@ function noScatterShow() {
   alert("没有")
 }
 
+function pubKeySign(eosName) {
+  if (loot.publicKey) {
+    eosSign(eosName);
+  } else {
+    const scatter = getScatter();
+    const eos = loot.scatter.eos(network, Eos);
+    eos.getAccount(eosName).then(data => {
+      const pubKey = data.permissions[0].required_auth.keys[0].key;
+      loot.publicKey = pubKey;
+      eosSign(eosName);
+    });
+  }
 
+}
 
 function eosSign(eosName) {
 
@@ -54,6 +273,13 @@ function eosSign(eosName) {
     $(".myName").html(eosName);
   }
   
+
+  // $(".userNameShow").html(eosName);
+
+  // $(".loginBtn").html('我的钱包');
+
+  // getUserToken(eosName);
+  // $('#myAssetsBox').show();
 }
 
 
@@ -72,7 +298,11 @@ function showMsg(content) {
   setTimeout('$("#msg").fadeOut()', 1500);
 }
 
-
+function exit() {
+  setCookie("account",'');
+  loot.scatter.forgetIdentity();
+  window.location.reload();
+}
 
 function setLanguage(lan) {
   setCookie('lan', lan);
@@ -460,7 +690,7 @@ function getNavPanel(){
   html += '      <span>我的钱包 （<span class="userNameShow">'+ getCookie("account") +'</span>）</span>';
   html += '      <span style="flex:1;"></span>';
   html += '      <span onclick="$(\'#myAssetsBox\').hide()">';
-  html += '        <img src="imgs/close.png" alt="" class="closeSvg">';
+  html += '        <img src="./image/closes.png" alt="" class="closeSvg">';
   html += '      </span>';
   html += '    </div>';
   html += '    <div class="scroll" style="height: 150px;">';
@@ -634,7 +864,7 @@ function getDexContractBox(){
     html += '        <span>选择合约</span>';
     html += '        <span style="flex:1;"></span>';
     html += '        <span onclick="$(\'#contractBox\').hide()">';
-    html += '          <img src="imgs/close.png" alt="" class="closeSvg">';
+    html += '          <img src="image/closes.png" alt="" class="closeSvg">';
     html += '        </span>';
     html += '      </div>';
 
@@ -732,11 +962,12 @@ function getNodePanel(){
 
     html += '<div class="alert" id="nodePanel" style="">';
     html += '  <div class="flex" style="height:100%;">';
-    html += '    <div class="content" style="height: 410px;">';
+    html += '    <div class="content" style="height: 940px;">';
     html += '      <div class="header flex">';
-    html += '        <span>选择节点</span>';
     html += '        <span style="flex:1;"></span>';
-    html += '        <span onclick="$(\'#nodePanel\').hide()"><img src="imgs/close.png" alt="" class="closeSvg"></span>';
+    html += '        <span style="flex:1.3">选择节点</span>';
+    // html += '        <span style="flex:1;"></span>';
+    html += '        <span onclick="$(\'#nodePanel\').hide()"><img src="./image/closes1.png" alt="" class="closeSvg"></span>';
     html += '      </div>';
     html += '      <div class="nodeSet">';
 
@@ -760,7 +991,7 @@ function getNodePanel(){
     })
 
 
-    html += '        <div class="flex" style="margin-top:20px;"><div class="actionBtn" onclick="setNode()">确认</div></div>';
+    html += '        <div class="flex" style="margin-top:486px;"><div class="actionBtn" onclick="setNode()"></div></div>';
     html += '      </div>';
     html += '    </div>';
     html += '  </div>';
@@ -886,6 +1117,8 @@ function getLinkData(api,selfData,fun){
   );
 
 }
+
+
 //昭告弹窗
 function getShowPublicly(){
   if ($('#publiclyBox').length == 0) {
@@ -895,12 +1128,13 @@ function getShowPublicly(){
     html += '<div class="alert-publicly" id="publiclyBox" style="display: none;">';
     html += '<div class="alert-box">';
     html +=  '<div class="content">';
-    html +=  '<p>群豪<span>sango555</span>,您要昭告天下吗？（每次1EOS）</p>'
+    html +=  '<p>群豪<span class="myName"></span>,您要昭告天下吗？（每次1EOS）</p>'
     html +=  '<form>'
-    html +=  '<input type="text" placeholder="输入昭告内容，限制128字" maxlength="128"></input>'
+    html +=  '<input type="text" placeholder="输入昭告内容，限制128字" maxlength="128" id="publicly-content"></input>'
     html +=  '</form>'
+    html +=  '<p style="margin:5px 0;visibility:hidden;" id="time-countdown">公告板将于<span>59</span>秒后完成冷却</p>'
     html +=  '<div class="alert-box-button">'
-    html +=  '<img src="./image/button-sure.png">'
+    html +=  '<img src="./image/button-sure.png" onclick="uploadPubliclyContent()" id="publicly-sure">'
     html +=  '<img src="./image/button-cancle.png" onclick="$(\'#publiclyBox\').hide()">'
     html +=  '</div>'
     html +=  '</div>';
@@ -916,3 +1150,19 @@ function getShowPublicly(){
 
 
 }
+
+//获取账户余额
+function getBalance(balance){
+  var html = '';
+  html += '<div class="box2-midd">'+balance+'</div>'
+  $('.box2').append(html)
+}
+
+//编辑昭告内容
+function uploadPubliclyContent(){
+  var publiclyContent= $("#publicly-content").val()
+  console.log(publiclyContent);
+  transferAccounts(publiclyContent)
+  
+}
+

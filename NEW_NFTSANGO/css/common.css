@@ -16,7 +16,7 @@ table{
   border: 1px solid #82796c;
   width: 100%;
   margin: 0 auto;
-  color: #ecd9bb;
+  color: #612f12;
   
 }
 table td{
@@ -117,8 +117,8 @@ span{
   z-index: 999;
 }
 .alert .content{
-  width: 450px;
-  height: 550px;
+  width:662px;
+  height: 940px;
   border-radius: 10px;
   background: url(../image/alertBG.png) no-repeat;
   background-size: 100% 100%;
@@ -126,8 +126,8 @@ span{
 .alert .content .header{
   padding:26px 26px 0 26px;
   margin-bottom: 28px;
-  font-size: 21.66px;
-  color: #ecd9bb;
+  font-size: 26px;
+  color: #663300;
 }
 .alert .content .header img{
   width: 25px;
@@ -187,14 +187,21 @@ span{
 /* 节点设置 */
 .nodeSet{
   padding:0 20px;
-  font-size: 18px;
-  color: #ecd9bb;
+  font-size: 24px;
+  color: #612f12;
+  width: 572px;
+  height: 726px;
+  background: url(../image/bglist.png) no-repeat;
+  margin-left: 25px;
+  padding-top: 20px;
 }
 .nodeSet .nodeList {
     text-align: left;
-    margin-top: 13px;
+    margin-top: 20px;
     cursor: pointer;
 }
+
+
 .nodeSet .nodeList .icon {
     position: relative;
     padding-left: 28px;
@@ -213,7 +220,7 @@ span{
     border-radius: 50%;
 }
 .nodeSet .nodeList .icon.act:before {
-    background: #ffda9e;
+    background: #663300;
     border: 1px solid transparent;
 }
 .nodeSet .nodeList .icon.act:after {
@@ -223,7 +230,7 @@ span{
     top: 50%;
     width: 10px;
     height: 10px;
-    background: #202431;
+    background: #c1af96;
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     box-sizing: border-box;
@@ -365,7 +372,7 @@ span{
   font-size: 24px;
 }
 .alert-publicly .alert-box .alert-box-button{
-  margin-top:42px ;
+  margin-top:0px ;
   padding-left: 90px;
 }
 .alert-publicly .alert-box .alert-box-button img:first-of-type{

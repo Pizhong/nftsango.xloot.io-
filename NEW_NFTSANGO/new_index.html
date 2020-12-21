@@ -21,17 +21,18 @@
             <img src="./image/jues.png" style="position: absolute;top: 5px;left: 5px;"  onclick="getMenuPanel()">
         </div>
         <div class="flex header-top-right">
-            <!-- <div class="box1">
+            <div class="box1">
               <div class="box1-left">
-                <img src="./image/head_icon1.png" alt="">
+                <!-- <img src="./image/head_icon1.png" alt=""> -->
+                <span class="myName" style="font-size:20px ;"></span>
               </div>
-              <div class="box1-right">208596</div>
-            </div> -->
+              <!-- <div class="box1-right">208596</div> -->
+            </div>
             <div class="box2">
               <div class="box2-left">
                 <img src="./image/head_icon2.png" alt="">
               </div>
-              <div class="box2-midd">557.5万</div>
+              <!-- <div class="box2-midd">557.5万</div> -->
               <div class="box2-right">
                 <img src="./image/add_button.png" alt="">
                 <img src="./image/red_circle.png" alt="" style="position: absolute;top: -5px;left: 25px;">
@@ -51,8 +52,8 @@
         <div class="progress_bar"></div>
       </div>
       <div class="top-bar">
-        <p><span>sango555</span>昭告天下</p>
-        <p>魏国的统统加血，其他的事情我来解决</p>
+        <p><span class="myName"></span>昭告天下</p>
+        <p id="zhaogao-content">魏国的统统加血，其他的事情我来解决</p>
         <img src="./image/edit.png" alt="" class="top-bar-edit" onclick="getShowPublicly()">
       </div>
     </header>
@@ -134,14 +135,36 @@
     </div>
     <div class="bottom">
       <ul>
-        <li><img src="./image/bottom1.png" alt="" style="margin-top:15px;margin-left:13px;"></li>
-        <li><img src="./image/bottom2.png" alt="" style="margin-top:-8px;margin-left:-10px;"></li>
-        <li><img src="./image//bottom3.png" alt="" style="margin-top: 10px;margin-left: -8px;"></li>
-        <li><img src="./image//bottom4.png" alt="" style="margin-top:15px;margin-left:5px;"></li>
-        <li><img src="./image//bottom5.png" alt=""></li>
+        <li><img src="./image/bottom1.png" alt="" style="margin-top:15px;margin-left:13px;" onclick="goMyArms()"></li>
+        <li><img src="./image/bottom2.png" alt="" style="margin-top:-8px;margin-left:-10px;" onclick="goZhanChan()"></li>
+        <li><img src="./image//bottom3.png" alt="" style="margin-top: 10px;margin-left: -8px;" onclick="goArmory()"></li>
+        <li><img src="./image//bottom4.png" alt="" style="margin-top:15px;margin-left:5px;" onclick="goSmithy()"></li>
+        <li><img src="./image//bottom5.png" alt="" onclick="goIndex()"></li>
       </ul>
     </div>
   </div>
+  <div class="alert" id="descriptionMsgBox" style="display: none;">
+    <div class="flex" style="height:100%;">
+      <div class="content">
+        <div class="header flex">
+          <span style="flex:1;"></span>  
+          <span class="desTitle" style="flex:1.3;">说明</span>
+          
+          <span onclick="$('#descriptionMsgBox').hide()">
+            <img src="image/closes1.png" alt="" class="closeSvg">
+          </span>
+        </div>
+        <div class="stackCountryBox">
+          <div style="height: 726px;line-height:30px;overflow-y: auto;background:url(./image/bglist.png) no-repeat;">
+          </div>
+        </div>
+        <div class="flex">
+          <div class="actionBtn" onclick="$('#descriptionMsgBox').hide()">确定</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </body>
 
 <script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
