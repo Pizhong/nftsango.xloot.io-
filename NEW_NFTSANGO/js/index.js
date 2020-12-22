@@ -2127,6 +2127,10 @@ function storychape(data){
     2:'./image/country-shu.png',
     3:'./image/country-wu.png'
   }
+  var status={
+    1:'./image/end.png',
+    2:'./image/keep.png'
+  }
   if(data.length>0){
     for(let i =0;i<data.length;i++){
       var startTime=getTime(data[i]["start"])
@@ -2153,7 +2157,7 @@ function storychape(data){
       html2 +=    '<span class="time-text">'+data[i]["timeass"]+'</span>'
       html2 +=     '</div>'
       html2 +=     '<div class="status">'
-      html2 +=     '<img src="./image/end.png" alt="">'
+      html2 +=     '<img src="'+status[data[i]["stat"]]+'" alt="">'
       html2 +=     '</div>'
       html2 +=     '<div class="time">'
       html2 +=     ' <p>开始时间：&nbsp;'+startTime+'-'+ endTime +'</p>'
