@@ -962,7 +962,7 @@ function getNodePanel(){
 
     html += '<div class="alert" id="nodePanel" style="">';
     html += '  <div class="flex" style="height:100%;">';
-    html += '    <div class="content" style="height: 940px;">';
+    html += '    <div class="content" style="padding-bottom:20px">';
     html += '      <div class="header flex">';
     html += '        <span style="flex:1;"></span>';
     html += '        <span style="flex:1.3">选择节点</span>';
@@ -991,7 +991,7 @@ function getNodePanel(){
     })
 
 
-    html += '        <div class="flex" style="margin-top:486px;"><div class="actionBtn" onclick="setNode()"></div></div>';
+    html += '        <div class="flex" style="margin-top:348px;"><div class="actionBtn" onclick="setNode()"></div></div>';
     html += '      </div>';
     html += '    </div>';
     html += '  </div>';
@@ -1154,7 +1154,13 @@ function getShowPublicly(){
 //获取账户余额
 function getBalance(balance){
   var html = '';
-  html += '<div class="box2-midd">'+balance+'</div>'
+  if(balance){
+    html += '<div class="box2-midd">'+balance+'</div>'
+  }
+  else{
+    html += '<div class="box2-midd">--</div>'
+
+  }
   $('.box2').append(html)
 }
 

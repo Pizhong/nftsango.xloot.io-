@@ -1766,7 +1766,7 @@ function descriptionMsgBoxShow(tag) {
       html += '待领取EOS：<span id="myMoneyEos">--</span></br>';
       html += '锁定时间：<span id="myMoneyLockTimes">--</span></br>';
       html += '上次提取时间：<span id="myMoneyLastWithTimes">--</span></br>';
-      html += '<div class="sanguoBox">可提取TIME：<span id="myMoneyLockWeek">--</span> TIME <div class="btn" style="margin-left:10px;" onclick="withMylockMoney()">提现</div></div></br></br>';
+      html += '<div class="sanguoBox">可提取TIME：<span id="myMoneyLockWeek">--</span> TIME <div class="btn" style="margin-left:10px;margin-top" onclick="withMylockMoney()">提现</div></div></br></br>';
       break
 
 

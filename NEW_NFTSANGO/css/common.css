@@ -66,6 +66,13 @@ span{
 
 }
 
+.mgt20{
+  margin-top: 20px;
+}
+
+
+
+
 .msgCon {
   position: fixed;
   top: 40%;
@@ -117,16 +124,16 @@ span{
   z-index: 999;
 }
 .alert .content{
-  width:662px;
-  height: 940px;
+  width:480px;
+  height: 678px;
   border-radius: 10px;
   background: url(../image/alertBG.png) no-repeat;
   background-size: 100% 100%;
 }
 .alert .content .header{
   padding:26px 26px 0 26px;
-  margin-bottom: 28px;
-  font-size: 26px;
+  margin-bottom: 18px;
+  font-size: 18.77px;
   color: #663300;
 }
 .alert .content .header img{
@@ -187,17 +194,17 @@ span{
 /* 节点设置 */
 .nodeSet{
   padding:0 20px;
-  font-size: 24px;
+  font-size: 17.33px;
   color: #612f12;
-  width: 572px;
-  height: 726px;
+  width: 440px;
+  height: 525px;
   background: url(../image/bglist.png) no-repeat;
-  margin-left: 25px;
-  padding-top: 20px;
+  margin-left: 18px;
+  padding-top: 15px;
 }
 .nodeSet .nodeList {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 15px;
     cursor: pointer;
 }
 

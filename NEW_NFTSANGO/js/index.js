@@ -1762,13 +1762,17 @@ function descriptionMsgBoxShow(tag) {
       html += '2、预期收益不等于最终收益，仅供玩家参考</br></br>';
       break
     case "myMoney":
+      $('.actionBtn').hide()
       title = '我的资产';
-      html += '总锁定TIME：<span id="myMoneyLockTime">--</span></br>';
-      html += '已提取TIME：<span id="myMoneyWithTime">--</span></br>';
-      html += '待领取EOS：<span id="myMoneyEos">--</span></br>';
-      html += '锁定时间：<span id="myMoneyLockTimes">--</span></br>';
-      html += '上次提取时间：<span id="myMoneyLastWithTimes">--</span></br>';
-      html += '<div class="sanguoBox">可提取TIME：<span id="myMoneyLockWeek">--</span> TIME <div class="btn" style="margin-left:10px;" onclick="withMylockMoney()">提现</div></div></br></br>';
+      html += '总锁定TIME：<span id="myMoneyLockTime" class="mgt20">--</span></br>';
+      html += '已提取TIME：<span id="myMoneyWithTime" class="mgt20">--</span></br>';
+      html += '待领取EOS：<span id="myMoneyEos" class="mgt20">--</span></br>';
+      html += '锁定时间：<span id="myMoneyLockTimes" class="mgt20">--</span></br>';
+      html += '上次提取时间：<span id="myMoneyLastWithTimes" class="mgt20">--</span></br>';
+      html += '<div class="sanguoBox mgt20">可提取TIME：<span id="myMoneyLockWeek">--</span> TIME </div></br></br>';
+      html += '<div clss="flex">'
+      html += '<div class="actionBtnn" onclick="withMylockMoney()"><span>提现</span></div>';
+      html += '</div>'
       break
 
 
@@ -1857,6 +1861,7 @@ function descriptionMsgBoxShow(tag) {
 
 
     case "about":
+      $('.actionBtn').show()
       title = '关于';
 
       html += '<span style="font-weight:bolder;">玩法介绍</span></br></br>';
@@ -2128,18 +2133,12 @@ function storychape(data){
       var endTime=data[i]["period"]+(new Date(data[i]["start"]).getTime())
       endTime = formatTime(endTime)
       console.log(endTime,'endTime');
-      if(parseInt((data[i]["eosass"]))<1.0){
-        data[i]["eosass"]="<1.0 EOS"
-      }
-      else {
-        data[i]["eosass"]=parseInt((data[i]["eosass"]))
-      }
-      if(parseInt((data[i]["timeass"]))<1.0){
-        data[i]["timeass"]="<1.0 TIME"
-      }
-      else {
-        data[i]["timeass"]=parseInt((data[i]["timeass"]))
-      }
+     
+        data[i]["eosass"]=parseInt((data[i]["eosass"]))+" EOS"
+      
+      
+        data[i]["timeass"]=parseInt((data[i]["timeass"])) + "TIME"
+      
       html2 += '<li class="main-first" id="id-main" style="background-image:url(' + backgroundMap[data[i]["id"]] + ')">';
       html2 +=    '<div class="huihe">'
       html2 +=    '<span>第'+data[i]["id"]+'回 '+ data[i]["name"]+'</span>'
@@ -2148,6 +2147,8 @@ function storychape(data){
       html2 +=    '<div class="jianli">'
       html2 +=    '<img src="./image/eos.png" alt="" class="jianli-eos">'
       html2 +=    '<span class="eos-text">'+data[i]["eosass"]+'</span>'
+      html2 +=     '</div>'
+      html2 +=    '<div class="jianli" style="margin-top:5px;">'
       html2 +=    '<img src="./image/time.png" alt="" class="jianli-eos">'
       html2 +=    '<span class="time-text">'+data[i]["timeass"]+'</span>'
       html2 +=     '</div>'
@@ -2252,3 +2253,37 @@ function goSmithy(){
 function goIndex(){
   window.location.href="./new_index.html"
 }
+
+$("#select1").mouseenter(function(){
+  $(this).attr("src",'./image/bottom1-hover.png')
+})
+$("#select2").mouseenter(function(){
+  $(this).attr("src",'./image/bottom2-hover.png')
+  
+})
+$("#select3").mouseenter(function(){
+  $(this).attr("src",'./image/bottom3-hover.png')
+})
+$("#select4").mouseenter(function(){
+  $(this).attr("src",'./image/bottom4-hover.png')
+})
+$("#select5").mouseenter(function(){
+  $(this).attr("src",'./image/bottom5-hover.png')
+})
+
+
+$("#select1").mouseleave(function(){
+  $(this).attr("src",'./image/bottom1.png')
+})
+$("#select2").mouseleave(function(){
+  $(this).attr("src",'./image/bottom2.png')
+})
+$("#select3").mouseleave(function(){
+  $(this).attr("src",'./image/bottom3.png')
+})
+$("#select4").mouseleave(function(){
+  $(this).attr("src",'./image/bottom4.png')
+})
+$("#select5").mouseleave(function(){
+  $(this).attr("src",'./image/bottom5.png')
+})
