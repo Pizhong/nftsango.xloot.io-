@@ -44,26 +44,25 @@ span{
   /* color:#bfad93;
    */
   color: #777777;
-  font-size: 24px;
+  font-size: 17.33px;
 }
 :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
  /* color:#bfad93; */
   color: #777777;
-  font-size: 24px;
+  font-size: 17.33px;
 
 }
 ::moz-placeholder{/*Mozilla Firefox 19+*/
  /* color:#bfad93; */
   color: #777777;
-  font-size: 24px;
+  font-size: 17.33px;
 
 
 }
 :-ms-input-placeholder{/*Internet Explorer 10+*/
   /* color:#bfad93; */
   color: #777777;
-  font-size: 24px;
-
+  font-size: 17.33px;
 }
 
 .mgt20{
@@ -351,39 +350,39 @@ span{
 .alert-publicly .alert-box .content{
   position: absolute;
   top: 295px;
-  left: 15px;
-  width: 680px;
-  height: 320px;
+  left: 110px;
+  width: 485px;
+  height: 212px;
   background: url(../image/alert-pubilcly-bottom.png) no-repeat;
   padding-left: 35px;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 .alert-publicly .alert-box .content p{
-  font-size: 24px;
+  font-size: 17.33px;
   color: #602d10;
 }
 
 .alert-publicly .alert-box .content span{
-  font-size: 24px;
+  font-size: 17.33px;
   color: #a73a37
 }
 .alert-publicly .alert-box .content input{
-  width: 600px;
-  height: 55px;
+  width: 420px;
+  height: 36px;
   border-radius: 16px;
   border: 1px solid #fff;
   box-shadow: 0px 0px 10px #666 inset;
   outline: none;
   padding-top: 5px;
   padding-left: 10px;
-  font-size: 24px;
+  font-size: 17.33px;
 }
 .alert-publicly .alert-box .alert-box-button{
   margin-top:0px ;
-  padding-left: 90px;
+  padding-left: 63px;
 }
 .alert-publicly .alert-box .alert-box-button img:first-of-type{
-  margin-right: 145px;
+  margin-right: 105px;
 }
 .alert-publicly .alert-box .alert-box-button img{
   cursor: pointer;
