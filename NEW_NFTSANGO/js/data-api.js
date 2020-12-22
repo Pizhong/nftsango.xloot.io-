@@ -53,5 +53,22 @@ function getBulltin(fun){
      
     }, "json"); 	
 }
+
+function getUserTime(name){
+  var api = get_random_api() ;
+  $.post(api + "/v1/chain/get_currency_balance",'{"code":"xpettimecore" ,"symbol":"TIME","account":"'+ name +'"}',
+  function(data,status){
+    console.log(data,'time');
+    var num = String(data[0]).split(" ")[0] || "0.0000";//零的个数取决与代币合约发行的小数精度
+    $(".box3-midd").html(num.substring(0,s.indexOf(".")+7)+" TIME");
+  }, "json");
+}
+
+
+
+
+
+
+
 $(document).ready(getStorychapeList())
 $(document).ready(getBulltin())

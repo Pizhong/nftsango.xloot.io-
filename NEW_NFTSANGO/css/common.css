@@ -170,8 +170,8 @@ span{
 }
 #menuBox .rightBox .navList{
   position: absolute;
-  top:0px;
-  left: 0px;
+  top:-23px;
+  left: 100px;
   background: #202431;
   padding:10px;
   border-radius: 10px;

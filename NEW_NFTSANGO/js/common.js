@@ -158,6 +158,7 @@ function eosLogin() {
   checkScatter(function(user) {
     pubKeySign(user.name);
     currencyBalance(user.name)
+    getUserTime(user.name)
   })
 }
 function currencyBalance(eosName){

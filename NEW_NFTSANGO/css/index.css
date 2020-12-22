@@ -11,6 +11,7 @@
   background-position: bottom;
   /*background:linear-gradient(#272c3a, #252a38, #202534,#1c222f)*/
   /*overflow-y: scroll;*/
+  overflow: hidden;
 }
 
 .stackCountryBox{

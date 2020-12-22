@@ -2137,7 +2137,7 @@ function storychape(data){
         data[i]["eosass"]=parseInt((data[i]["eosass"]))+" EOS"
       
       
-        data[i]["timeass"]=parseInt((data[i]["timeass"])) + "TIME"
+        data[i]["timeass"]=parseInt((data[i]["timeass"])) + " TIME"
       
       html2 += '<li class="main-first" id="id-main" style="background-image:url(' + backgroundMap[data[i]["id"]] + ')">';
       html2 +=    '<div class="huihe">'
@@ -2247,6 +2247,11 @@ function goArmory(){
 //跳转铁匠铺
 function goSmithy(){
   window.location.href="./html/smithy.html"
+}
+
+//跳转结盟页
+function goAlliance(){
+  window.location.href="./html/alliance.html"
 }
 
 //跳转首页
