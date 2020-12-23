@@ -1127,7 +1127,7 @@ function getShowPublicly(){
     var html = '';
    
     html += '<div class="alert-publicly" id="publiclyBox" style="display: none;">';
-    html += '<div class="alert-box">';
+    html += '<div class="alert-box flex">';
     html +=  '<div class="content">';
     html +=  '<p>群豪<span class="myName"></span>,您要昭告天下吗？（每次1EOS）</p>'
     html +=  '<form>'

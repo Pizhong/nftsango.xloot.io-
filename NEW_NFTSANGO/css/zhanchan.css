@@ -1,8 +1,8 @@
 .app1{
   margin:0 auto;
-  width: 720px;
+  width: 520px;
   height:100%;
-  padding-bottom: 215px;
+  padding-bottom: 176px;
   position: relative;
   box-sizing: border-box;
   background: #272c3a;
@@ -12,21 +12,23 @@
   background-position: bottom;
   /*background:linear-gradient(#272c3a, #252a38, #202534,#1c222f)*/
   /*overflow-y: scroll;*/
+  overflow: hidden;
 }
-
+p{
+  margin: 0;
+}
 header{
   width:100%;
   height:63px;
   /*padding-top: 65px;*/
   margin-bottom: 10px;
-  background: url(../imgs/headerBG.jpg) no-repeat;
-  border-bottom: 2px solid #5d5243;
+  
   box-sizing: border-box;
   position: relative;
 }
 .head-top{
-  height: 63px;
-  line-height: 63px;
+  height: 46px;
+  line-height: 46px;
   font-size: 12px;
   padding-top: 14px;
   box-sizing: border-box;
@@ -36,17 +38,19 @@ header{
   background-color: #000;
 }
 .header-top-left{
-  width: 91px;
-  height: 91px;
-  background: url(../image/user.png) no-repeat;
+  width: 65px;
+  height: 65px;
+  background: url(../image/user-small.png) no-repeat;
   position: absolute;
   top: 0px;
+  cursor: pointer;
+  z-index: 999;
 }
 .header-top-right{
   float: left;
-  height: 31px;
-  line-height: 31px;  
-  margin-left: 114px;
+  height: 16px;
+  line-height: 16px;  
+  margin-left: 85px;
   position: relative;
 }
 .box1{
@@ -72,20 +76,19 @@ header{
 .box2-left{
   float: left;
   position: absolute;
-  top: 0px;
-  left: 190px;
+  top: -7px;
+  left: 170px;
   z-index: 15;
 }
 .box2-midd{
   float: left;
   position: absolute;
-  top: 3px;
-  left: 215px;
-  font-size: 20px;
+  top: 0px;
+  left: 190px;
+  font-size: 14.44px;
   color: #fff;
   background: url(../image/put.png) no-repeat;
-  width: 110px;
-  padding-right: 5px;
+  padding:0 15px;
 }
 .box2-right{
   float: left;
@@ -106,20 +109,19 @@ header{
 .box3-left{
   float: left;
   position: absolute;
-  top: 0px;
-  left: 390px;
+  top: -7px;
+  left: 310px;
   z-index: 15;
 }
 .box3-midd{
   float: left;
   position: absolute;
-  top: 3px;
-  left: 415px;
-  font-size: 20px;
+  top: 0px;
+  left: 326px;
+  font-size: 14.44px;
   color: #fff;
-  background: url(../image//put.png) no-repeat;
-  width: 110px;
-  padding-right: 5px;
+  background: url(../image/put.png) no-repeat;
+  padding:0 15px;
 }
 .box3-right{
   float: left;
@@ -135,36 +137,38 @@ header{
 .progress_bar{
   height: 5px;
   width: 100%;
-  background: url(../image//progress_bar.png) no-repeat;
+  background: url(../image/progress_bar.png) no-repeat;
   position: absolute;
-  left: 91px;
-  top: 60px;
+  left: 0px;
+  top: 40px;
 }
 .main{
   position: relative;
 }
 .main-box1{
-  width: 255px;
-  margin-top: 65px;
-  margin-left:95px;
+  width: 183px;
+  margin-top: 15px;
+  margin-left:68px;
   cursor: pointer;
+  position: relative;
 }
 
 .box1-p1{
-    font-size:24px ;
+    width: 150px;
+    font-size:17.33px ;
     color:#ffcd28 ;
     background: url(../image/zhanchan-box1-bottom.png) no-repeat;
-    margin-left: 50px;
-    padding-left: 46px;
+    margin-left: 26px;
+    text-align: center;
 }
 .box1-p2{
-  background: url(../image//zhanchan-box1-bottom2.png) no-repeat;
-  margin-left: 15px;
-  padding-left: 38px;
-  font-size: 24px;
+  width: 138px;
+  background: url(../image/zhanchan-box1-bottom2.png) no-repeat;
+  font-size: 17.33px;
   color: #fff;
-  z-index: 99;
-  margin-top: -15px;
+  text-align: center;
+  margin-left: 30px;  
+  margin-top: 10px;
 }
 .box1-p2 span{
   color:#ffcd28 ;
@@ -172,31 +176,38 @@ header{
 
 .box1-img{
   width: 100%;
-  height: 224px;
-  margin-top: -25px;
+  height: 95px;
   background: url(../image/zhanchan-box1.png) no-repeat;
 }
+.box1-flag{
+  position: absolute;
+  top: 90px;
+  left: 4px;
+}
 .main-box2{
-  width: 255px;
-  margin-top: -137px;
-  margin-left:445px;
+  width: 183px;
+  margin-top: -25px;
+  margin-left:323px;
+  position: relative;
 }
 
 .box2-p1{
-    font-size:24px ;
+    width: 138px;
+    font-size:17.33px;
     color:#ffcd28 ;
     background: url(../image/zhanchan-box2-bottom1.png) no-repeat;
-    margin-left: 50px;
-    padding-left: 46px;
+    margin-left: 26px;
+    text-align: center;
 }
 .box2-p2{
+  width: 138px;
   background: url(../image/zhanchan-box1-bottom2.png) no-repeat;
-  margin-left: 15px;
-  padding-left: 38px;
-  font-size: 24px;
+  font-size: 17.33px;
   color: #fff;
-  z-index: 99;
-  margin-top: -15px;
+  text-align: center;
+  margin-left: 30px;  
+  margin-top: 10px;
+
 }
 .box2-p2 span{
   color:#ffcd28 ;
@@ -204,127 +215,130 @@ header{
 
 .box2-img{
   width: 100%;
-  height: 224px;
-  margin-top: -20px;
+  height: 101px;
+  
   background: url(../image/zhanchan-box2.png) no-repeat;
 }
+.box2-flag{
+  position: absolute;
+  top: 90px;
+  left: 4px;
+}
 .main-box3{
-  width: 645px;
-  height: 260px;
-  margin-top: -135px;
+  width: 469px;
+  height: 153px;
+  
   background: url(../image/zhanchan-box3.png) no-repeat;
   padding-top:110px;
 }
 .box3-p{
+  width: 131px;
   background: url(../image/zhanchan-box3-bottom.png) no-repeat;
-  font-size: 24px;
+  font-size: 17.33px;
   color:#ffcd28 ;
-  margin-left:255px ;
-  padding-left: 40px;
+  text-align: center;
+  margin-left: 190px;
+  margin-top: -10px;
 }
 
 .main-box4{
-  width: 100%;
-  overflow: hidden;
-  height: auto;
-
+  width: 372px;
+  position: relative;
+  margin-left: 72px;
 }
 
 .main-box4-1{
-  width:262px;
-  margin-left: 100px;
+  width:186px;
   float: left;
+  
 }
 .box4-1-p1{
-  font-size: 24px;
+  width: 135px;
+  font-size: 17.33px;
   color:#ffcd28 ;
-  margin-left: 55px;
-  padding-left: 45px;
+  text-align: center;
   background: url(../image/zhanchan-box4-1-bottom1.png) no-repeat;
+  margin-left: 35px;
 }
 .box4-1-p2{
-  margin-left: 107px;
-  margin-top: 5px;
-  padding-left: 45px;
-  font-size: 24px;
+  width: 85px;
+  font-size: 17.33px;
   color: #fff;
-  /* background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat; */
   position: relative;
 }
 .box4-1-p2 img{
-  position:  absolute;
-  left: -2px;
-  top:-2px;
+  position: absolute;
+  top: 10px;
+  left: 72px;
+  z-index: 66;
 }
 .box4-1-p2 p{
-  width: 53px;
-  height: 23px;
-  line-height: 23px;
-  position: absolute;
-  top: -21px;
-  left: 27px;
-  padding-left: 18px;
+  width: 52px;
+  height: 17px;
+  line-height: 17px;
   background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat;
+  text-align: center;
+    position: absolute;
+    top: 15px;
+    left: 86px;
 }
 .box4-img-1{
-  width: 260px;
-  height: 136px;
-  margin-top: -16px;
-  /* margin-left: 100px; */
+  width: 190px;
+  height: 100px;
   background: url(../image/zhanchan-box4-1.png) no-repeat;
 }
 .main-box4-2{
-  width:254px;
+  width:186px;
   float: left;
-  margin-left: -30px;
-  margin-top: -2.5px;
 }
 .box4-2-p1{
-  font-size: 24px;
-  color:#ffffff ;
-  margin-left: 55px;
-  padding-left: 50px;
-  background: url(../image/zhanchan-box4-2-bottom1.png) no-repeat;
+  width: 135px;
+  font-size: 17.33px;
+  color:#ffcd28 ;
+  text-align: center;
+  background: url(../image/zhanchan-box4-1-bottom1.png) no-repeat;
+  margin-left: 35px;
 }
 .box4-2-p2{
-  margin-left: 58px;
-  margin-top: 5px;
-  padding-left: 45px;
-  font-size: 24px;
+  width: 85px;
+  font-size: 17.33px;
   color: #fff;
-  /* background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat; */
   position: relative;
 }
 .box4-2-p2 img{
-  position:  absolute;
-  left: -2px;
-  top:-2px;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  z-index: 66;
 }
 .box4-2-p2 p{
-  width: 53px;
-  height: 23px;
-  line-height: 23px;
-  position: absolute;
-  top: -21px;
-  left: 27px;
-  padding-left: 18px;
-  background: url(../image/zhanchan-box4-2-bottom2.png) no-repeat;
+  width: 52px;
+  height: 17px;
+  line-height: 17px;
+  background: url(../image/zhanchan-box4-1-bottom2.png) no-repeat;
+  text-align: center;
+    position: absolute;
+    top: 15px;
+    left: 86px;
 }
 .box4-img-2{
-  width: 280px;
-  height: 190px;
-  margin-top: -16px;
-  /* margin-left: 100px; */
-  background: url(../image/zhanchan-box4-2.png) no-repeat;
+  width: 190px;
+  height: 100px;
+  background: url(../image/zhanchan-box4-1.png) no-repeat;
 }
 
+.box4-flag{
+  position: absolute;
+    top: 60px;
+    left: 166px;
+}
 .blod-box{
   position: absolute;
   top: 0;
-  left: 360px;
+  left: 255px;
 }
 .blod-box p{
-  font-size: 16px;
+  font-size: 11.55px;
   color: #ffcc66;
   margin: 0;
 }
@@ -342,19 +356,21 @@ header{
   margin-right: 20px;
   float: left;
 }
-.jianli-che{
-  float: left;
+.box1-jianli-che{
+  position:absolute;
+  top: 130px;
+  left: 116px;
   cursor: pointer;
 }
-.jianli-che img{
+.box1-jianli-che img{
   margin-top: -15px;
 }
-.jianli-che p{
-  width: 100px;
-  height: 34px;
-  line-height: 34px;
+.box1-jianli-che p{
+  width: 75px;
+  height: 26px;
+  line-height: 26px;  
   background: url(../image/che-bottom.png) no-repeat;
-  font-size: 16px;
+  font-size: 11.55px;
   color: #fff;
   text-align: center;
   margin-top: 0;
@@ -369,28 +385,36 @@ header{
 .all-icon-left{
   float: left;
   position: absolute;
-  top: 116.5px;
-  left: 20px;
+  top: 110px;
+  left: 15px;
 }
 
 
 .all-icon-right-top{
   position: absolute;
-  top: 105px;
-  right: 22px;
+  top: 70px;
+  right: 15px;
 }
 
 .all-icon-right-bottom{
   position: absolute;
-  bottom: 127px;
-  right: 22px;
+  bottom: 95px;
+  right: 15px;
 }
 
 .all-icon-bottom{
   position: absolute;
-  right: 22px;
-  bottom: 22px;
+  right: 5px;
+  bottom:20px;
 }
 .all-icon-bottom li{
   float: left;
+  margin-right: 10px;
+}
+.goback{
+  position: absolute;
+  top: 69px;
+  left: 18px;
+  z-index: 999;
+  cursor: pointer;
 }

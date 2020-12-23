@@ -27,7 +27,7 @@ function showWarReport(){
     var html = '';
    
     html += '<div class="alert-publicly" id="war-report" style="display: none;">';
-    html += '<div class="alert-box">';
+    html += '<div class="alert-box flex">';
     html +=  '<div class="war-report-content" >';
     html +=  '<img src="../image/war-report-close.png" class="close" onclick="$(\'#war-report\').hide()"></img>'
     html +=   '<div class="top">'
@@ -64,9 +64,9 @@ function showActionMessage(){
     var html = '';
    
     html += '<div class="alert-publicly" id="action-message" style="display: none;">';
-    html += '<div class="alert-box">';
+    html += '<div class="alert-box flex">';
     html +=  '<div class="action-message-content" >';
-    html +=  '<img src="../image/war-report-close.png" class="close" onclick="$(\'#action-message\').hide()"></img>'
+    html +=  '<img src="../image/war-report-close.png" class="close" onclick="$(\'#action-message\').hide(),$(\'#battle-target\').hide()"></img>'
     html +=  '<div class="action-message-box1">';
     html +=   '<p>行动信息</p>'
     html +=   '<div class="action-message-icon-box">'
@@ -102,4 +102,14 @@ function showActionMessage(){
 
   }
   $("#action-message").show();
+}
+
+//返回首页
+function gobackIndex(){
+  window.location.href="../new_index.html"
+}
+
+//显示战斗目标图标
+function showBattleTarget(){
+  $("#battle-target").show()
 }

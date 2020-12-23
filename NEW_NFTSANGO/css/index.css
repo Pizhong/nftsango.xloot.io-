@@ -92,7 +92,7 @@ header{
   left: 190px;
   font-size: 14.44px;
   color: #fff;
-  background: url(../image//put.png) no-repeat;
+  background: url(../image/put.png) no-repeat;
   /* width: 135px; */
   padding:0  15px;
 }
@@ -123,11 +123,10 @@ header{
   float: left;
   position: absolute;
   top: 0px;
-  left: 330px;
+  left: 326px;
   font-size: 14.44px;
   color: #fff;
-  background: url(../image//put.png) no-repeat;
-  /* width: 110px; */
+  background: url(../image/put.png) no-repeat;
   padding:0 15px;
 }
 .box3-right{
