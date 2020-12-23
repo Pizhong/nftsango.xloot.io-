@@ -1,3 +1,10 @@
+
+var actionPoint='' //行动点
+
+
+
+
+
 function getActionPotint(){
   if ($('#action-point').length == 0) {
     
@@ -106,10 +113,28 @@ function showActionMessage(){
 
 //返回首页
 function gobackIndex(){
-  window.location.href="../new_index.html"
+  window.location.href="../index.html"
 }
 
 //显示战斗目标图标
 function showBattleTarget(){
   $("#battle-target").show()
 }
+
+//行动点更新
+function updateActionPoint(){
+  console.log(123);
+  if (typeof actionPoint != 'object') {
+    actionPoint= new CountUp("actionPoint", 0, 0.0000, 4, 3, {
+      useEasing: true,
+      useGrouping: false,
+      separator: ',',
+      decimal: '.',
+      prefix: '',
+      suffix: ' ' + String(obj.quantity).split(' ')[1]
+    });
+  }
+  actionPoint.update(parseFloat(obj.quantity));
+}
+
+updateActionPoint()

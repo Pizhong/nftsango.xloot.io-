@@ -2260,7 +2260,7 @@ function goAlliance(){
 
 //跳转首页
 function goIndex(){
-  window.location.href="./new_index.html"
+  window.location.href="./index.html"
 }
 
 $("#select1").mouseenter(function(){
