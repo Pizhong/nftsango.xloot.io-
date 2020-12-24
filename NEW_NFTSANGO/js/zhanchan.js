@@ -6,6 +6,7 @@ var sanguoMsg = {
     'hp': '',
     'def': '',
     'burse': '',
+    'burse2':'',
     'supplyACT': '',
     'totalACT': '',
     'totalHP': '',
@@ -16,6 +17,7 @@ var sanguoMsg = {
     'hp': '',
     'def': '',
     'burse': '',
+    'burse2':'',
     'supplyACT': '',
     'totalACT': '',
     'totalHP': '',
@@ -26,6 +28,7 @@ var sanguoMsg = {
     'hp': '',
     'def': '',
     'burse': '',
+    'burse2':'',
     'supplyACT': '',
     'totalACT': '',
     'totalHP': '',
@@ -194,6 +197,8 @@ function updateActionPoint(){
   getLinkData(api, selfData, function(data) {
     for (x in data["rows"]) {
       objMsg[x] = data["rows"][x];  
+      objMsg[x].supplyACT = Math.floor(Number(parseFloat(objMsg[x].supplyACT) / Math.pow(10, 1)));
+      objMsg[x].totalACT = Math.floor(Number(parseFloat(objMsg[x].totalACT) / Math.pow(10, 1)));
       console.log(numberFormat(objMsg[x].totalHP));
       $.each(sanguoMsg, function(i, n) {
         console.log('each', i, n)
@@ -231,17 +236,49 @@ function updateActionPoint(){
           n.supplyACT.update(objMsg[x].supplyACT);
 
           if (typeof n.totalACT != 'object') {
-            n.totalACT = new CountUp("actionPoint" + Number(n.id), 0, 0.0000, 4, 3, options);
+            n.totalACT = new CountUp("actionPoint" + Number(n.id), 0, 0.00000000, 8, 3, options);
            
           }
           n.totalACT.update(objMsg[x].totalACT);
 
+
+          if (typeof n.burse != 'object') {
+            n.burse = new CountUp("burse" + Number(n.id), 0, 0.0000, 4, 3, {
+              useEasing: true,
+              useGrouping: false,
+              separator: ',',
+              decimal: '.',
+              prefix: '',
+              suffix: ' ' + String(objMsg[x].burse).split(' ')[1]
+            });
+           
+          }
+          n.burse.update(parseFloat(objMsg[x].burse));
+          
+          if (typeof n.burse2 != 'object') {
+            n.burse2 = new CountUp("burse2" + Number(n.id), 0, 0.0000, 4, 3, {
+              useEasing: true,
+              useGrouping: false,
+              separator: ',',
+              decimal: '.',
+              prefix: '',
+              suffix: ' ' + String(objMsg[x].burse2).split(' ')[1]
+            });
+           
+          }
+          n.burse2.update(parseFloat(objMsg[x].burse2));
         }
       })
     }
     if (objMsg == '') {
       return
     }
+    setTimeout(()=>{
+      document.getElementById("totalACT1").innerHTML=Math.round(Number(document.getElementById("actionPoint1").innerHTML))
+      document.getElementById("totalACT2").innerHTML=Math.round(Number(document.getElementById("actionPoint3").innerHTML))
+      document.getElementById("totalACT3").innerHTML=document.getElementById("actionPoint2").innerHTML
+
+    },3000)
   })
 }
 
