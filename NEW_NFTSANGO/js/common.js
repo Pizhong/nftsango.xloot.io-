@@ -9,41 +9,9 @@ var myMoneyLockWeekTimer = '';
 
 ScatterJS.plugins(new ScatterEOS());
 
-var chainId , network ;
+var chainId;
 var nftContractName, dexContractName, saleContractName , blindBoxContractName;
-const API_ENDPOINTS2 = [
-  'eospush.tokenpocket.pro',
-  'eos.blockeden.cn',
-  'eos.greymass.com',
-  'nodes.get-scatter.com',
-  // 'mainnet.meet.one',
-  'api.eossweden.se',
-  // 'api.eoslaomao.com',
 
-  // 'api-kylin.eosasia.one',
-];
-
-function get_random_api2() {
-  // const index = Math.floor(Math.random() * API_ENDPOINTS2.length);
-
-  var index = getCookie("nodeIndex") || nodeIndex;
-  // var node = 'https://'+API_ENDPOINTS2[index];
-  var node = API_ENDPOINTS2[index];
-
-  // var node = 'https://api-kylin.eosasia.one';
-  // console.log(index,node);
-  return node;
-}
-
-const API_ENDPOINTS = [
-  'https://eospush.tokenpocket.pro',
-  'https://eos.blockeden.cn',
-  'https://eos.greymass.com',
-  // 'https://mainnet.meet.one',
-  'https://api.eossweden.se',
-  // 'https://api.eoslaomao.com'
-  // 'https://api-kylin.eosasia.one'
-];
   
 function get_random_api() {
   const index = Math.floor(Math.random() * API_ENDPOINTS.length);
@@ -51,21 +19,7 @@ function get_random_api() {
 
 }
 
-// chainId = '5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191';
-// nftContractName = 'xlootshovel1';//nft
-// saleContractName = 'looreception';//前置
-// dexContractName = 'xlootnftdex1';//dex
-// blindBoxContractName = 'xpetshovelco';
 
-
-
-// network = ScatterJS.Network.fromJson({
-//   blockchain: 'eos',
-//   host: 'api-kylin.eosasia.one',
-//   protocol: 'https',
-//   port: 443,
-//   chainId: chainId
-// })
 
 chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
 // nftContractName = 'xlootshovel1';
@@ -73,26 +27,10 @@ nftContractName = 'xlootshovel1';
 saleContractName = 'looreception';
 dexContractName = 'xlootnftdex1';
 blindBoxContractName = 'xpetshovelco';
-network = ScatterJS.Network.fromJson({
-  blockchain: 'eos',
-  host: get_random_api2(),
-  protocol: 'https',
-  port: 443,
-  chainId: chainId
-})
+
 
 var isDev = true;
-const EOS_CONFIG = {
-  chainId: chainId, // 32 byte (64 char) hex string
-  keyProvider: '', // WIF string or array of keys..
-  httpEndpoint: 'https://' + get_random_api2(),
-  mockTransactions: () => null, // or 'fail'
-  expireInSeconds: 3600,
-  broadcast: true,
-  verbose: isDev,
-  debug: isDev, // API and transactions
-  sign: true
-}
+
 
 $(function() {
   // getNavPanel();
@@ -141,26 +79,11 @@ function selectionNode(num){
 }
 function setNode(){
   setCookie('nodeIndex',nodeIndex);
-  // network = ScatterJS.Network.fromJson({
-  //   blockchain: 'eos',
-  //   host: get_random_api2(),
-  //   // host: 'nodes.eos42.io',https://mainnet.eoscannon.io
-  //   protocol: 'https',
-  //   port: 443,
-  //   chainId: chainId
-  // })
+ 
   $('.nodeDialog').hide();
   window.location.reload();
 }
 
-
-function eosLogin() {
-  checkScatter(function(user) {
-    pubKeySign(user.name);
-    currencyBalance(user.name)
-    getUserTime(user.name)
-  })
-}
 function currencyBalance(eosName){
   console.log(eosName,'eosName');
   const eos = loot.scatter.eos(network, Eos);

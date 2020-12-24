@@ -100,8 +100,9 @@ function getDateRandom() {
 function eosLogin() {
   checkScatter(function(user) {
     pubKeySign(user.name);
-    getAccountBalance(user.name)
-    console.log(user.name,'name');
+    
+    currencyBalance(user.name)
+    getUserTime(user.name)
   })
 }
 

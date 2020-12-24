@@ -1,8 +1,62 @@
 
 var actionPoint='' //行动点
-
-
-
+var sanguoMsg = {
+  'sanguo_01': {
+    'id': 1,
+    'hp': '',
+    'def': '',
+    'burse': '',
+    'supplyACT': '',
+    'totalACT': '',
+    'totalHP': '',
+    'brokencount': ''
+  },
+  'sanguo_02': {
+    'id': 2,
+    'hp': '',
+    'def': '',
+    'burse': '',
+    'supplyACT': '',
+    'totalACT': '',
+    'totalHP': '',
+    'brokencount': ''
+  },
+  'sanguo_03': {
+    'id':3,
+    'hp': '',
+    'def': '',
+    'burse': '',
+    'supplyACT': '',
+    'totalACT': '',
+    'totalHP': '',
+    'brokencount': ''
+  }
+}
+var objMsg=[]
+var options = {
+  useEasing: true, //使用缓和效果
+  useGrouping: false, //使用分组效果
+  separator: ',', //分离器，数据够三位，例如100,000
+  decimal: '.', //小数点分割，例如：10.00
+  prefix: '', //第一位默认数字
+  suffix: '' //最后一位默认数字
+};
+// 数字格式化
+function numberFormat(num){
+  if(num>=100000000){
+    num=Math.round(num/10000000)/10+'亿'
+  }
+  else if(num>10000000){
+   num=Math.round(num/1000000)/10+'千万'
+  }
+  else if(num>=10000){
+    num=Math.round(num/1000)/10+'万'
+  }
+  else{
+    num=num
+  }
+  return num
+ }
 
 
 function getActionPotint(){
@@ -123,18 +177,75 @@ function showBattleTarget(){
 
 //行动点更新
 function updateActionPoint(){
-  console.log(123);
-  if (typeof actionPoint != 'object') {
-    actionPoint= new CountUp("actionPoint", 0, 0.0000, 4, 3, {
-      useEasing: true,
-      useGrouping: false,
-      separator: ',',
-      decimal: '.',
-      prefix: '',
-      suffix: ' ' + String(obj.quantity).split(' ')[1]
-    });
+  var api = get_random_api();
+  var selfData = {
+    json: true,
+    code: kingContractName,
+    scope: kingContractName,
+    table: 'kingdom',
+    index_position: 1,
+    key_type: "i64",
+    lower_bound: '',
+    limit: 10,
+    reverse: false,
+    show_payer: false,
   }
-  actionPoint.update(parseFloat(obj.quantity));
+  
+  getLinkData(api, selfData, function(data) {
+    for (x in data["rows"]) {
+      objMsg[x] = data["rows"][x];  
+      console.log(numberFormat(objMsg[x].totalHP));
+      $.each(sanguoMsg, function(i, n) {
+        console.log('each', i, n)
+        if (Number(x) == Number(n.id - 1)) {
+          // if (typeof n.hp != 'object') {
+          //   n.hp = new CountUp("sanguoHp_0" + Number(n.id), 0, 0, 0, 3, options);
+          // }
+          // n.hp.update(obj[x].hp);
+
+          if (typeof n.totalHP != 'object') {
+            n.totalHP = new CountUp("totalHp" + Number(n.id), 0, 0, 0, 3, options);
+          }
+          n.totalHP.update(objMsg[x].totalHP);
+
+          if (typeof n.def != 'object') {
+            n.def = new CountUp("def" + Number(n.id), 0, 0, 0, 3, options);
+          }
+          n.def.update(objMsg[x].def);
+
+          // if (typeof n.brokencount != 'object') {
+          //   n.brokencount = new CountUp("sanguoBrokencount_0" + Number(n.id), 0, 0, 0, 3, options);
+          // }
+          // n.brokencount.update(obj[x].brokencount);
+
+
+
+          // if (typeof n.totalpower != 'object') {
+          //   n.totalpower = new CountUp("sanguoTotalpower_0" + Number(n.id), 0, 0, 0, 3, options);
+          // }
+          // n.totalpower.update(obj[x].totalpower);
+
+          if (typeof n.supplyACT != 'object') {
+            n.supplyACT = new CountUp("supplyACT" + Number(n.id), 0, 0, 0, 3, options);
+          }
+          n.supplyACT.update(objMsg[x].supplyACT);
+
+          if (typeof n.totalACT != 'object') {
+            n.totalACT = new CountUp("actionPoint" + Number(n.id), 0, 0.0000, 4, 3, options);
+           
+          }
+          n.totalACT.update(objMsg[x].totalACT);
+
+        }
+      })
+    }
+    if (objMsg == '') {
+      return
+    }
+  })
 }
 
-updateActionPoint()
+
+
+
+$(document).ready(updateActionPoint())

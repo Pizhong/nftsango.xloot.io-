@@ -332,17 +332,36 @@ header{
     top: 60px;
     left: 166px;
 }
-.blod-box{
+.blod-box1{
   position: absolute;
   top: 0;
   left: 255px;
 }
-.blod-box p{
+.blod-box1 p{
   font-size: 11.55px;
   color: #ffcc66;
   margin: 0;
 }
-
+.blod-box2{
+  position: absolute;
+  top: 193px;
+  left: 256px;
+}
+.blod-box2 p{
+  font-size: 11.55px;
+  color: #ffcc66;
+  margin: 0;
+}
+.blod-box3{
+  position: absolute;
+  top: 503px;
+  left: 11px;
+}
+.blod-box3 p{
+  font-size: 11.55px;
+  color: #ffcc66;
+  margin: 0;
+}
 
 
 

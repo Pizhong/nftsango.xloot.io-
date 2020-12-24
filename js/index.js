@@ -1,6 +1,6 @@
 
 var selectNum = 1;
-var kingContractName = "xkingbattle1";
+var kingContractName = "xkingbattle2";
 var kingMsg = [];
 var myknightMsg = {};
 var myNftOnkingMsg = [];
