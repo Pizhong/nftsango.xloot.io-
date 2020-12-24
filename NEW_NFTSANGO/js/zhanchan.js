@@ -198,7 +198,7 @@ function updateActionPoint(){
     for (x in data["rows"]) {
       objMsg[x] = data["rows"][x];  
       objMsg[x].supplyACT = Math.floor(Number(parseFloat(objMsg[x].supplyACT) / Math.pow(10, 1)));
-      objMsg[x].totalACT = Math.floor(Number(parseFloat(objMsg[x].totalACT) / Math.pow(10, 1)));
+      objMsg[x].totalACT = Math.floor(Number(parseFloat(objMsg[x].totalACT) / Math.pow(10, 8)));
       console.log(numberFormat(objMsg[x].totalHP));
       $.each(sanguoMsg, function(i, n) {
         console.log('each', i, n)
@@ -236,7 +236,7 @@ function updateActionPoint(){
           n.supplyACT.update(objMsg[x].supplyACT);
 
           if (typeof n.totalACT != 'object') {
-            n.totalACT = new CountUp("actionPoint" + Number(n.id), 0, 0.00000000, 8, 3, options);
+            n.totalACT = new CountUp("actionPoint" + Number(n.id), 0, 0, 0, 3, options);
            
           }
           n.totalACT.update(objMsg[x].totalACT);

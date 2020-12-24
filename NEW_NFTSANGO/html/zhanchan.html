@@ -79,7 +79,7 @@
       <div class="main-box4">
         <div class="main-box4-1">
           <p class="box4-1-p1">蜀国驻军</p>
-        <p class="box1-p2" id="actionPoint2" style="display: none;">--</p>
+        <p class="box1-p2" id="actionPoint2" style="position: absolute;top: 70px;left: -32px;">--</p>
           <div class="box4-1-p2">
             <img src="../image/zhu.png" alt="">
             <p>x4</p>
@@ -93,7 +93,11 @@
             <p>00:05:46</p>
           </div>
           <div class="box4-img-2" onclick="showBattleTarget()"></div>
-          <p style="display: none;"><span id="burse3"></span><br><span id="burse23"></span></p>
+          <div class="box1-jianli-che" onclick="getActionPotint()" style="top:113px">
+            <img src="../image/che.png" alt="">
+            <p><span id="burse3"></span><br><span id="burse23"></span></p>
+          </div>
+          
         </div>
         <img src="../image/shu-flag.png" alt="" class="box4-flag">
       </div>
@@ -111,7 +115,7 @@
         <img src="../image/bule .png" alt="">
         <p style="margin-top: 8px;">行动力 : <span>(<span id="supplyACT2"></span> / <span id="totalACT2"></span> )</span></p>
       </div>
-      <div class="blod-box3" style="display: none;">
+      <div class="blod-box3">
         <p>血量：<span id="totalHp2">--</span></p>
         <img src="../image/blod.png" alt="">
         <p>防御：<span id="def2"></span></p>
